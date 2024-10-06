@@ -10,7 +10,7 @@
   position: fixed;
   width: 300px; /* Ajusta el tamaño del contenedor del logo */
   height: 300px;
-  top: 90px; /* Ajusta para que el logo se superponga */
+  top: 110px; /* Ajusta para que el logo se superponga */
   z-index: 2; /* Asegúrate de que el logo esté sobre la tarjeta */
   margin-bottom: -60px; /* Espacio para superponer */
 }
