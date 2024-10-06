@@ -63,7 +63,7 @@
 /* Estilo de los botones */
 .sign-in-card button {
   padding: 10px;
-  background-color: #61dafb;
+  background-color: #132324;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -71,5 +71,5 @@
 }
 
 .sign-in-card button:hover {
-  background-color: #21a1f1;
+  background-color: #1e3542;
 }
