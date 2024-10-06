@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import './App.css';
 import background from './assets/background1.jpg'; // Fondo del universo
+import logo from './assets/logo.png'; // Asegúrate de tener el logo correcto
 
 function App() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   return (
-    <div 
+    <div  
       className="app"
       style={{
         backgroundImage: `url(${background})`,
@@ -17,13 +18,18 @@ function App() {
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
       }}
     >
+      {/* Contenedor del logo */}
+      <div className="logo-container">
+        <img src={logo} alt="App Logo" className="app-logo" />
+      </div>
+
       {/* Tarjeta de sign-in */}
       <div className="sign-in-card">
-        <h2>Sign In</h2>
-        <form>
+        <form className='SignUp'>
+          <h1>Login</h1>
           <label>
             Username:
             <input 
@@ -42,6 +48,7 @@ function App() {
               placeholder="Enter your password"
             />
           </label>
+
           <button type="submit">Sign In</button>
         </form>
       </div>
