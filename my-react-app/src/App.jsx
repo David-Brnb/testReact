@@ -1,11 +1,33 @@
 import { useState } from 'react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from './firebase'; // Importar configuración de Firebase
 import './App.css';
-import background from './assets/background1.jpg'; // Fondo del universo
-import logo from './assets/logo.png'; // Asegúrate de tener el logo correcto
+import background from './assets/background1.jpg'; 
+import logo from './assets/logo.png';
 
 function App() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+
+    // Llamar a Firebase Auth para iniciar sesión
+    signInWithEmailAndPassword(auth, username, password)
+      .then((userCredential) => {
+        // Inicio de sesión exitoso
+        const user = userCredential.user;
+        setError("Se pudo")
+        console.log('User signed in:', user);
+        // Aquí puedes redirigir al usuario o realizar alguna acción después del inicio de sesión
+      })
+      .catch((error) => {
+        // Manejar errores de inicio de sesión
+        setError(error.message);
+        console.error('Error signing in:', error);
+      });
+  };
 
   return (
     <div  
@@ -28,15 +50,16 @@ function App() {
 
       {/* Tarjeta de sign-in */}
       <div className="sign-in-card">
-        <form className='SignUp'>
+        <form className='SignUp' onSubmit={handleSignIn}>
           <h1>Login</h1>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
           <label>
-            Username:
+            Username (Email):
             <input 
               type="text" 
               value={username} 
               onChange={(e) => setUsername(e.target.value)} 
-              placeholder="Enter your name"
+              placeholder="Enter your email"
             />
           </label>
           <label>

@@ -1,18 +1,32 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
+import { getAuth } from "firebase/auth"; // Importa la autenticación
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB07z1XF1XyPmgRyO2GefUlBxsFO4XO74M",
-    authDomain: "pruebaapi-7d2ae.firebaseapp.com",
-    projectId: "pruebaapi-7d2ae",
-    storageBucket: "pruebaapi-7d2ae.appspot.com",
-    messagingSenderId: "1040915548220",
-    appId: "1:1040915548220:web:a897985800f055cfa99b39",
-    measurementId: "G-NLHBQ0Z9QZ"
-  };
-  
 
+  apiKey: "AIzaSyCdiH1ZDSnp8t1BqijhhW59e8NgStY_8p8",
+
+  authDomain: "lbta-firebase-chat-58c02.firebaseapp.com",
+
+  projectId: "lbta-firebase-chat-58c02",
+
+  storageBucket: "lbta-firebase-chat-58c02.appspot.com",
+
+  messagingSenderId: "1046816935616",
+
+  appId: "1:1046816935616:web:38de2058845ad8f49a6725"
+
+};
+
+
+// Inicializar Firebase
 const app = initializeApp(firebaseConfig);
+
+// Inicializar la base de datos
 const database = getDatabase(app);
 
-export { database };
+// Inicializar la autenticación
+const auth = getAuth(app);
+
+// Exportar ambas configuraciones
+export { database, auth };
