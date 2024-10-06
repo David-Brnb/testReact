@@ -5,6 +5,22 @@
   text-align: center;
 }
 
+/* Contenedor del logo */
+.logo-container {
+  position: fixed;
+  width: 300px; /* Ajusta el tamaño del contenedor del logo */
+  height: 300px;
+  top: 90px; /* Ajusta para que el logo se superponga */
+  z-index: 2; /* Asegúrate de que el logo esté sobre la tarjeta */
+  margin-bottom: -60px; /* Espacio para superponer */
+}
+
+/* Estilos para el logo */
+.app-logo {
+  max-width: 100%; /* Ajusta el tamaño del logo */
+  max-height: 100%;
+}
+
 /* Estilos de la tarjeta de sign-in */
 .sign-in-card {
   background: rgba(0, 0, 0, 0.8);
@@ -13,11 +29,12 @@
   color: white;
   max-width: 400px;
   width: 90%;
-  margin: 0 auto; /* Centra la tarjeta horizontalmente */
+  margin: 0 auto;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1; /* Para que la tarjeta esté detrás del logo */
 }
 
 /* Encabezado de la tarjeta */
@@ -40,7 +57,7 @@
   border: none;
   border-radius: 5px;
   outline: none;
-  width: 100%; /* Asegura que el input ocupe todo el ancho */
+  width: 100%;
 }
 
 /* Estilo de los botones */

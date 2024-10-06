@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import background from './assets/background1.jpg'; // Fondo del universo
+import logo from './assets/logo.png'; // Asegúrate de tener el logo correcto
 
 function App() {
   const [username, setUsername] = useState('');
@@ -17,9 +18,14 @@ function App() {
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
       }}
     >
+      {/* Contenedor del logo */}
+      <div className="logo-container">
+        <img src={logo} alt="App Logo" className="app-logo" />
+      </div>
+
       {/* Tarjeta de sign-in */}
       <div className="sign-in-card">
         <h2>Sign In</h2>
