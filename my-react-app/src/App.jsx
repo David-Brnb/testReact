@@ -8,7 +8,7 @@ function App() {
   const [password, setPassword] = useState('');
 
   return (
-    <div 
+    <div  
       className="app"
       style={{
         backgroundImage: `url(${background})`,
@@ -28,8 +28,8 @@ function App() {
 
       {/* Tarjeta de sign-in */}
       <div className="sign-in-card">
-        <h2>Login</h2>
-        <form>
+        <form className='SignUp'>
+          <h1>Login</h1>
           <label>
             Username:
             <input 
@@ -48,6 +48,7 @@ function App() {
               placeholder="Enter your password"
             />
           </label>
+
           <button type="submit">Sign In</button>
         </form>
       </div>
