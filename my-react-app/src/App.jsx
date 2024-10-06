@@ -28,7 +28,7 @@ function App() {
 
       {/* Tarjeta de sign-in */}
       <div className="sign-in-card">
-        <h2>Sign In</h2>
+        <h2>Login</h2>
         <form>
           <label>
             Username:
